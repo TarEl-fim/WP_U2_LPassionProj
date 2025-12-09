@@ -1,3 +1,30 @@
 body{
     background-color: aquamarine;
 }
+
+.gray{
+    height: 10px;
+    width: 10px;
+    background-color: bisque;
+}
+
+.invisi{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 80%;
+    height: 5%;
+    margin: 2%;
+}
+
+.tile{
+    background-color: black;
+    margin: 2%;
+    height: 10px;
+    width: 10px;
+}
+
+#gameBoard{
+    height: 60vh;
+    width: 80vw;
+}
