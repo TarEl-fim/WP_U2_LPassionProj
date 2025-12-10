@@ -49,10 +49,27 @@ class tileClass{
 
         tile.addEventListener('contextmenu', (event) => {
         console.log('kill yourself');
+
+        if(tile.classList.contains('Closed') || tile.classList.contains('Flag')){
+            console.log('1st');
+
+            if (tile.classList.contains('Flag')){
+                console.log('2nd');
+                tile.classList.add('Closed');
+                tile.classList.remove('Flag');
+            }else{
+                console.log('3rd');
+                tile.classList.add('Flag');
+                tile.classList.remove('Closed');
+            }
+        
+        }
         event.preventDefault()
+        
         })
 
-        tile.className = 'tile';
+        tile.classList.add('tile');
+        tile.classList.add('Closed');
         return tile;
     }  
 

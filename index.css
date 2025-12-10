@@ -11,20 +11,28 @@ body{
 .invisi{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    width: 80%;
-    height: 5%;
-    margin: 2%;
+    justify-content: center;
+    width: 80vw;
+    height: 3vh;
+}
+
+.Closed{
+    background-image: url('resources/index/minesweeper_tilesClosed.png');
+}
+
+.Flag{
+    background-image: url('resources/index/minesweeper_tilesFlagged.png');
 }
 
 .tile{
     background-color: black;
-    margin: 2%;
-    height: 10px;
-    width: 10px;
+    margin: .2%;
+    background-size: contain;
+    height: 20px;
+    width: 20px;
 }
 
 #gameBoard{
-    height: 60vh;
-    width: 80vw;
+    height: fit-content;
+    width: fit-content;
 }
