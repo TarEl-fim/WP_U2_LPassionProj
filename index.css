@@ -13,7 +13,7 @@ body{
     flex-direction: row;
     justify-content: center;
     width: 80vw;
-    height: 3vh;
+    padding: 0%;
 }
 
 .Closed{
@@ -22,6 +22,10 @@ body{
 
 .Flag{
     background-image: url('resources/index/minesweeper_tilesFlagged.png');
+}
+
+.Open{
+    background-image: url('resources/index/minesweeper_tilesOpen.png');
 }
 
 .tile{

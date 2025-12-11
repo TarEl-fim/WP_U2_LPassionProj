@@ -44,8 +44,16 @@ class tileClass{
         this.img = null;
     }
 
+    openTile(){
+        this.classList.add('Open');
+        this.classList.remove('Closed');
+        //run tile check
+    }
+
     genTile(){
         const tile = document.createElement('div');
+
+        tile.addEventListener('click',this.openTile);
 
         tile.addEventListener('contextmenu', (event) => {
         console.log('kill yourself');
@@ -54,13 +62,18 @@ class tileClass{
             console.log('1st');
 
             if (tile.classList.contains('Flag')){
+
                 console.log('2nd');
                 tile.classList.add('Closed');
                 tile.classList.remove('Flag');
+                tile.addEventListener('click',this.openTile);
+
             }else{
+                
                 console.log('3rd');
                 tile.classList.add('Flag');
                 tile.classList.remove('Closed');
+                tile.onclick = null;
             }
         
         }
