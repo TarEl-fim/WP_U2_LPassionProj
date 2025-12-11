@@ -45,6 +45,9 @@ class tileClass{
     }
 
     openTile(){
+        if (firstClick ==0){
+            //run bombPlace
+        }
         this.classList.add('Open');
         this.classList.remove('Closed');
         //run tile check
@@ -91,6 +94,7 @@ class tileClass{
 main();
 
 function main(){
+    firstClick = 0;
     board = new Board(9,10);
     const body = document.getElementById('gameArea');
     body.appendChild(board.Visualset)
