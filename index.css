@@ -20,6 +20,14 @@ body{
     background-image: url('resources/index/minesweeper_tilesClosed.png');
 }
 
+.BombClosed{
+    background-image: url('resources/index/minesweeper_tilesClosed.png');
+}
+
+.Bomb{
+    background-image: url('resources/index/minesweeper_tilesMine.png');
+}
+
 .Flag{
     background-image: url('resources/index/minesweeper_tilesFlagged.png');
 }
