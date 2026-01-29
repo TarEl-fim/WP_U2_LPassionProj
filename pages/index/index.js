@@ -48,43 +48,46 @@ class tileClass{
         this.x = x;
     }
 
-    bombPlace(){
+    bombPlace(tile){
         //yo mama
         //Change random num to size accordingly later
+        console.log('poopy')
         for (let i=0; i<20;i++){
             console.log(i)
             let yValue = randNum(this.holder.length);
             let xValue = randNum(this.holder[0].length);
-            this.holder[yValue][xValue].classList.add('BombClosed');
+            tile.holder[yValue][xValue].classList.add('BombClosed');
             console.log(yValue,xValue);
         }
     }
 
-    openTile(){
+    openTile(tile){
         if (firstClick == 0){
-            console.log('penis')
-            this.bombPlace;
-            console.log('penis')
+            console.log('poop')
+            this.bombPlace(tile);
+            console.log('poop')
             firstClick += 1;
         }
 
-        if (this.classList.contains('BombClosed')){
+        if (!tile.classList.contains('Flag')){
 
-            this.className = '';
-            this.classList.add('Bomb');
+            if (tile.classList.contains('BombClosed')){
 
-        }else{
-            this.classList.add('Open');
-            this.classList.remove('Closed');
-            //run tile check
+                tile.className = '';
+                tile.classList.add('Bomb');
+
+            }else{
+                tile.classList.add('Open');
+                tile.classList.remove('Closed');
+                //run tile check
+            }
         }
-        
     }
 
     genTile(){
         const tile = document.createElement('div');
 
-        tile.addEventListener('click',this.openTile);
+        tile.addEventListener('click',this.openTile(this));
 
         tile.addEventListener('contextmenu', (event) => {
         console.log('kill yourself');
@@ -97,10 +100,9 @@ class tileClass{
                 console.log('2nd');
                 tile.classList.add('Closed');
                 tile.classList.remove('Flag');
-                tile.addEventListener('click',this.openTile);
-
-            }else{
+                tile.addEventListener('click',this.openTile(this));
                 
+            }else{
                 console.log('3rd');
                 tile.classList.add('Flag');
                 tile.classList.remove('Closed');
@@ -130,5 +132,4 @@ function main(){
     board = new Board(9,10);
     const body = document.getElementById('gameArea');
     body.appendChild(board.Visualset)
-    console.log(board.Visualset);
 }
